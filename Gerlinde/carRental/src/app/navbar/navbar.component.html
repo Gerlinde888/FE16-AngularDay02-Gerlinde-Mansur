@@ -18,10 +18,27 @@
                 </li>
 
             </ul>
+        </div>
+
+            <div class="container">
+                <p class="btn btn-info" (click)="clickCounter()">Donate 10 Euro</p>
+                <p>{{ counter }}</p>
+            </div>
+            <ng-template [ngIf]="counter > 200" [ngIfElse]="linde">
+                <div class="row justify-content-center">
+                <div class="col d-flex btn btn-success">You spent more than 200 Euro, Your are a VIP</div>
+                 </div>
+            </ng-template>
+            
+            <ng-template #linde>
+                <p class=" btn btn-info">You spent not more than 200 Euro</p>
+            </ng-template>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-        </div>
+
+
+        
     </div>
 </nav>

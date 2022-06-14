@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  title: string = `Tesla Car Rental`;
-  constructor() { }
+export class NavbarComponent  {
+  // array = car;
+  title = 'Tesla Car Rental';
+  counter: number = 0;
 
-  ngOnInit(): void {
+  clickCounter() {
+    this.counter += 10;
   }
+
 
 }

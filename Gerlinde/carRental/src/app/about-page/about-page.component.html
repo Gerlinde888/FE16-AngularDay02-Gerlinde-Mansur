@@ -1,7 +1,4 @@
-<div class="container">
-    <p class="btn btn-danger" (click)="clickCounter()">Click</p>
-    <p>{{ counter }}</p>
-</div>
+
 <!-- <div [ngStyle]="{
   'background-color' : counter > 10 ? 'gray' : 'blue',
   'border': counter > 10 ? '5px solid black' : '5px solid yellow'
@@ -18,19 +15,14 @@
     </ng-template>
 
 </div> -->
-<ng-template [ngIf]="counter > 10" [ngIfElse]="linde">
-    <p class=" btn btn-success">The counter value is bigger than 10</p>
-</ng-template>
-
-<ng-template #linde>
-    <p class=" btn btn-danger">The counter value is not bigger than 10</p>
-</ng-template>
 
 <div class="row">
-    <div *ngFor="let val of cars" class="col-4">
+    
+    <div *ngFor= "let val of cars" class="col-4">
+        
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{ val.name }}</h5>
+                <h5 class="card-title">{{ val.name }}Test</h5>
                 <p class="card-text"> {{val.age}} </p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
