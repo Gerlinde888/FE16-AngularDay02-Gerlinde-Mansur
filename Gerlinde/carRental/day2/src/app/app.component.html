@@ -1,0 +1,53 @@
+<div class="container">
+    <p class="btn btn-danger" (click)="clickCounter()">Click</p>
+    <p>{{ counter }}</p>
+</div>
+<!-- <div [ngStyle]="{
+  'background-color' : counter > 10 ? 'gray' : 'blue',
+  'border': counter > 10 ? '5px solid black' : '5px solid yellow'
+}">
+
+
+    <ng-template [ngIf]="counter > 10" [ngIfElse]="serri">
+        <p class="text-success">The counter value is bigger than 10</p>
+    </ng-template>
+
+    <ng-template #serri>
+        <p class="text-danger">The counter value is not bigger than 10</p>
+
+    </ng-template>
+
+</div> -->
+<ng-template [ngIf]="counter > 10" [ngIfElse]="serri">
+    <p class=" btn btn-success">The counter value is bigger than 10</p>
+</ng-template>
+
+<ng-template #serri>
+    <p class=" btn btn-danger">The counter value is not bigger than 10</p>
+</ng-template>
+
+<div class="row">
+    <div *ngFor="let val of students" class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ val.name }}</h5>
+                <p class="card-text"> {{val.age}} </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <input type="text" [formControl]="name" placeholder="Type your name"> -->
+
+
+<!-- <form action="">
+    <input type="text"><input type="text"><input type="text">
+</form> -->
+
+<form [formGroup]="formInfo" (ngSubmit)="takingValuesFromInputs()">
+    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="lastName">
+    <input type="text" formControlName="email">
+    <input type="submit" class="btn btn-warning">
+</form>
