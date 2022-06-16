@@ -1,44 +1,44 @@
-<nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">{{title}}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <a class="navbar-brand" routerLink="/">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                    <a class="nav-link" routerLink="/about-page" aria-current="page">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="contact">Contact Us</a>
-                </li>
-
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact-page" aria-current="page">Contact us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" (click)="addSum()" class="btn btn-warning mx-2">Donate 10 €</button>
+                </li>
+            </ul>
+            <ng-template [ngIf]="add10 >= 10">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-success mx-2">{{add10}} € DONATED</button>
+                    </li>
+                </ul>
+            </ng-template>
+
+
+            <ng-template [ngIf]="add10 >= 200">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link vip">YOU ARE A  VIP </a>
+                    </li>
+                </ul>
+            </ng-template>
         </div>
 
-            <div class="container">
-                <p class="btn btn-info" (click)="clickCounter()">Donate 10 Euro</p>
-                <p>{{ counter }}</p>
-            </div>
-            <ng-template [ngIf]="counter > 200" [ngIfElse]="linde">
-                <div class="row justify-content-center">
-                <div class="col d-flex btn btn-success">You spent more than 200 Euro, Your are a VIP</div>
-                 </div>
-            </ng-template>
-            
-            <ng-template #linde>
-                <p class=" btn btn-info">You spent not more than 200 Euro</p>
-            </ng-template>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
 
 
-        
     </div>
 </nav>

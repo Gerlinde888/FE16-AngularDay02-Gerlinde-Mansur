@@ -1,1 +1,15 @@
-
+<div class="py-5">
+    <div class="container">
+        <div class="row hidden-md-up">
+            <div class="col-md-4" *ngFor="let car of cars">
+                <div class="card" style="width: 25em;">
+                    <img class="card-img-top" style="height: 15em;" src="{{car.image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{car.name}}</h5>
+                        <p class="card-text">{{car.year}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
